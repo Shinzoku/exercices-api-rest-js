@@ -1,0 +1,87 @@
+body {
+	font-family: Helvetica, sans-serif;
+	margin: 0;
+	background-color: #1D1D1D;
+}
+
+#joke {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	background-color: #445599;
+	color:  #EEE;
+	height: 600px;
+	font-size: 2em;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 50px;
+	margin: 50px;
+	padding: 30px;
+}
+
+#link {
+	background-color: #EEE;
+	padding: 15px;
+	border-radius: 50px;
+	border: 1px solid black;
+	color: #445599;
+	text-align: center;
+	margin: 30px 50px;
+	font-weight: bold;
+}
+
+#menu {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 30px 50px;
+	color: #FFF;
+	font-size: 1.5em;
+}
+
+#menu > button {
+	border: none;
+	border-radius: 15px;
+	font-size: 1.5em;
+	padding: 5px 15px;
+	color: #EEE;
+	background-color: green;
+}
+
+#political-check {
+	height: 25px;
+	width: 25px;
+}
+
+.cliquable:hover {
+	transform: scale(1.05);
+}
+
+.cliquable:active {
+	transform: scale(0.95);
+}
+
+.menu-element {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.two-part-delivery {
+	background-color: #1D1D1D;
+	padding: 15px 25px;
+	border-radius:  25px;
+	color: #1D1D1D;
+	transition: linear 0.25s;
+}
+
+.two-part-delivery:hover {
+	color: #EEE;
+}
+
+.two-part-delivery:active {
+	color: #EEE;
+}
+

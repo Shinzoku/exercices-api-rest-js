@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,
+        tbody,
+        tr,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <title>Joke</title>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        Select <a href="#">category / categories</a>:
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                <input type="radio" name="catSelect" value="any" id="cat-radio1" checked><label for="cat-radio1">Any</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="catSelect" value="multi" id="cat-radio2"><label for="cat-radio2">Custom:</label>
+                                <span>
+                                    <input type="checkbox" id="cat-cb1"><label for="cat-cb1">Programming</label>
+                                    <input type="checkbox" id="cat-cb2"><label for="cat-cb2">Misc</label>
+                                    <input type="checkbox" id="cat-cb3"><label for="cat-cb3">Dark</label>
+                                    <input type="checkbox" id="cat-cb4"><label for="cat-cb4">Pun</label>
+                                    <input type="checkbox" id="cat-cb5"><label for="cat-cb5">Spooky</label>
+                                    <input type="checkbox" id="cat-cb6"><label for="cat-cb6">Christmas</label>
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select <a href="#">language</a>:
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option value="en">en - English</option>
+                                <option value="fr" selected="selected">fr - French</option>
+                                <option value="cs">cs - Czech</option>
+                                <option value="de">de - German</option>
+                                <option value="es">es - Spanish</option>
+                                <option value="pt">pt - Portuguese</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select <a href="#">flags</a> to blacklist:
+                    </td>
+                    <td>
+                        <div>
+                            (optional)&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="blf-cb1" checked><label for="blf-cb1">nsfw</label>
+                            <input type="checkbox" id="blf-cb2" checked><label for="blf-cb2">religious</label>
+                            <input type="checkbox" id="blf-cb3" onchange="isPolitical()"><label for="blf-cb3">political</label>
+                            <input type="checkbox" id="blf-cb4" checked><label for="blf-cb4">racist</label>
+                            <input type="checkbox" id="blf-cb5" checked><label for="blf-cb5">sexist</label>
+                            <input type="checkbox" id="blf-cb6" checked><label for="blf-cb6">explicit</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select <a href="#">response format</a>:
+                    </td>
+                    <td>
+                        <div>
+                            <input type="radio" id="fmt-cb1" name="formatRadio" value="json" checked><label for="fmt-cb1">default (json)</label>
+                            <input type="radio" id="fmt-cb2" name="formatRadio" value="xml"><label for="fmt-cb2">xml</label>
+                            <input type="radio" id="fmt-cb3" name="formatRadio" value="yaml"><label for="fmt-cb3">yaml</label>
+                            <input type="radio" id="fmt-cb4" name="formatRadio" value="txt"><label for="fmt-cb4">plain text</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select at least one <a href="#">joke type</a>:
+                    </td>
+                    <td>
+                        <div>
+                            <input type="checkbox" id="typ-cb1" checked><label for="typ-cb1">single</label>
+                            <input type="checkbox" id="typ-cb2" checked><label for="typ-cb2">twopart</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Search for a joke that<br>contains this <a href="#">search string</a>:
+                    </td>
+                    <td>
+                        <div>
+                            <input type="text" id="searchStringInput" placeholder="(optional)">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Search for a joke<br>in this <a href="#">ID range</a>:
+                    </td>
+                    <td>
+                        <div>
+                            (optional)&nbsp;&nbsp;&nbsp; From: <input type="number" id="idRangeInputFrom" value="0" min="0" step="1" max="1368"> To: <input type="number" id="idRangeInputTo" value="1368" min="0" step="1" max="1368">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Amount</a> of jokes:
+                    </td>
+                    <td>
+                        <div>
+                            <input type="number" id="jokesAmountInput" value="1" min="1" step="1" max="10">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <div>
+            URL: <span>https://v2.jokeapi.dev/joke/Any</span><br> Request: <span id="readyRequest"></span><br>
+
+            <button>Reset Form</button> <button id="sendRequest" onclick="getJoke()">Send Request &gt;</button>
+        </div>
+        <code><span>Result:</span>
+            <div>(Set parameters and click "Send Request" above)</div>
+        </code>
+        <br>
+        <div><span id="jokeDisplay"></span></div>
+        <div><span id="setupDisplay"></span></div>
+        <div><span id="deliveryDisplay"></span></div>
+
+
+
+    </div>
+    <script src="joke.js"></script>
+</body>
+
+</html>

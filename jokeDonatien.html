@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="mainJokeDonatien.css">
+    <script type="text/javascript" src="jokeDonatien.js"></script>
+    <title>Blagues de Mononc'</title>
+</head>
+
+<body onload="loader();">
+    <div id="menu">
+        <div class="menu-element">
+            <label for="political-check">Blagues politiques :</label>
+            <input type="checkbox" name="political-check" id="political-check" onchange="updateLink(this)">
+        </div>
+
+        <button onclick="getJoke();" class="cliquable">Valider</button>
+    </div>
+    <div id="link">
+
+    </div>
+    <div id="joke">
+
+    </div>
+</body>
+
+</html>
