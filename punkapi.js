@@ -1,14 +1,12 @@
 async function beers() {
     const response = await fetch(`https://api.punkapi.com/v2/beers?per_page=40`)
     const data = await response.json()
-    console.log(data[0]);
     createBeersList(data);
-
 }
 
 beers()
 
-
+// Les 3 fonctions suivantes font la même chose, afficher une liste de nom de bière
 
 // function createBeersList(beersList) {
 //     const beer = document.getElementById('display');
